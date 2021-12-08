@@ -33,8 +33,8 @@ RSpec.describe 'POST /api/orders', type: :request do
     expect(@order.products.first).to eq product
   end
   it 'is expected to include the ID of the order in the response body' do
-    response_body = JSON.parse(repsonse.body)
-    binding.pry
-    expect(response_body['order']['id']).to eq @order.id  
+    response_body = JSON.parse(response.body)
+    expect(response_body['order']['id']).to eq @order.id
   end
 end
+    
