@@ -23,12 +23,7 @@ RSpec.describe 'PUT /api/orders/:id', type: :request do
     response_body = JSON.parse(response.body)
     expect(response_body['message']).to eq 'Kebab was added to your order'
   end
-    it 'is expected to hold two items' do
-      expect(@order.items.count).to eq 2
-    end
+  it 'is expected to hold two items' do
+    expect(@order.items.count).to eq 2
   end
-
-  # it 'does something' do
-  #   binding.pry
-  # end
-
+end
