@@ -4,8 +4,6 @@ class Order < ApplicationRecord
   has_many :products, through: :items
 
   def serialized
-    serialization = as_json
-    serialization.merge!(products: products.as_json)
+    as_json.merge!(products: products.as_json)
   end
 end
-
